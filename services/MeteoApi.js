@@ -1,0 +1,25 @@
+let request = require('request');
+let constants = require('../config');
+
+
+let weatherData = (places, callback) => {
+    let url = constants.meteoltMap.BASE_URL + encodeURIComponent(places) + constants.meteoltMap.CITY
+
+    request({ url, json: true }, (error, { body }) => {
+
+        if (error) {
+            callback('Cant fetch data from wheather api', undefined)
+        } else if (!body.place || !body.place.name || !body.forecastTimestamps[0].airTemperature) {
+            callback('Nepavyko rasti, iveskite teisinga miesto pavadinima!', undefined)
+
+        } else {
+            callback(undefined, {
+                temperature: body.forecastTimestamps[0].airTemperature,
+                description: body.forecastTimestamps[0].conditionCode,
+                cityName: body.place.name
+            })
+        }
+    })
+}
+
+module.exports = weatherData;
