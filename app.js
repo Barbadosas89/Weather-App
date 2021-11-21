@@ -41,7 +41,6 @@ app.get('/weather', (req, res) => {
                 error
             })
         }
-        console.log(temperature, description, cityName)
         res.send({
             temperature,
             description,
@@ -56,7 +55,7 @@ app.get('/weather', (req, res) => {
 
 app.get('*', (req, res) => {
     res.render('404', {
-        title: 'page not found'
+        title: 'puslapis nerastas'
     })
 })
 module.exports = app;
