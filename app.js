@@ -20,7 +20,7 @@ hbs.registerPartials(partialsPath)
 app.use(express.static(publicStaticDirPath))
 
 
-app.get('/', (req, res) => {
+app.get('', (req, res) => {
     res.render('index', {
         title: 'Orai Lietuvoje'
     })
@@ -31,7 +31,7 @@ app.get('/weather', (req, res) => {
     let places = req.query.places
     if (!places) {
         return res.send({
-            error: 'You must enter correct city name!'
+            error: 'Iveskite miesto pavadinima!'
         })
     }
 
