@@ -3,7 +3,7 @@ let constants = require('../config');
 
 
 let weatherData = (places, callback) => {
-    let url = constants.meteoltMap.BASE_URL + encodeURIComponent(places) + constants.meteoltMap.CITY
+    let url = constants.meteoltMap.base_url + encodeURIComponent(places) + constants.meteoltMap.city
 
     request({ url, json: true }, (error, { body }) => {
 

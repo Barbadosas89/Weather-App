@@ -1,7 +1,7 @@
 let constants = {
     meteoltMap: {
-        BASE_URL: 'https://api.meteo.lt/v1/places/',
-        CITY: '/forecasts/long-term'
+        base_url: 'https://api.meteo.lt/v1/places/',
+        city: '/forecasts/long-term'
     }
 }
 
