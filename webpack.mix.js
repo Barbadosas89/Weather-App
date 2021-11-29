@@ -1,6 +1,6 @@
 const mix = require('laravel-mix');
 
-mix.setPublicPath('docs');
+mix.setPublicPath('public');
 
 mix.version();
 
@@ -16,5 +16,5 @@ if (mix.inProduction()) {
 // 	}
 // });
 
-mix.js('resources/js/app.js', 'docs/js/app.js');
-mix.sass('resources/sass/app.scss', 'docs/css/app.css');
+mix.js('resources/js/app.js', 'public/js/app.js');
+mix.sass('resources/sass/app.scss', 'public/css/app.css');

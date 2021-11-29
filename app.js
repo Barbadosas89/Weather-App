@@ -7,7 +7,7 @@ const app = express();
 
 let weatherData = require('./services/MeteoApi')
 
-let publicStaticDirPath = path.join(__dirname, './docs')
+let publicStaticDirPath = path.join(__dirname, './public')
 
 let viewsPath = path.join(__dirname, './routes/views')
 
