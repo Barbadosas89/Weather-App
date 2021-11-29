@@ -8,7 +8,7 @@ let weatherData = (places, callback) => {
     request({ url, json: true }, (error, { body }) => {
 
         if (error) {
-            callback('Cant fetch data from wheather api', undefined)
+            callback('Nepavyksta pasiekti Meteo.lt ', undefined)
         } else if (!body.place || !body.place.name || !body.forecastTimestamps[0].airTemperature) {
             callback('Nepavyko rasti, iveskite teisinga miesto pavadinima!', undefined)
 
